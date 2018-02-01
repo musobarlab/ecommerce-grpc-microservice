@@ -1,2 +1,8 @@
 package: github.com/wuriyanto48/ecommerce-grpc-microservice/membership
-import: []
+import:
+- package: github.com/dgrijalva/jwt-go
+  version: v3.1.0
+- package: github.com/stretchr/testify
+  version: v1.2.1
+  subpackages:
+  - mock
