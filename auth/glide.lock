@@ -1,5 +1,5 @@
-hash: a52c0489f9829fad61410e7c82c161674bcd311ebd93ad1a41377687e6180baa
-updated: 2018-02-01T22:28:23.050067189+07:00
+hash: e9ce05ac992fc4ad8acb318a47ecae218a10b6dc0bee07b339ae758059b41bd8
+updated: 2018-02-02T00:02:20.130504689+07:00
 imports:
 - name: github.com/davecgh/go-spew
   version: 6d212800a42e8ab5c146b8ace3490ee17e5225f9
@@ -14,7 +14,7 @@ imports:
 - name: github.com/stretchr/objx
   version: cbeaeb16a013161a98496fad62933b1d21786672
 - name: github.com/stretchr/testify
-  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  version: 12b6f73e6084dad08a7c6e575284b177ecafbc71
   subpackages:
   - assert
   - mock
