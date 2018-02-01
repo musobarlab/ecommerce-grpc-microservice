@@ -20,3 +20,5 @@ coverages/*.txt
 
 .env
 .idea/
+
+auth-osx
