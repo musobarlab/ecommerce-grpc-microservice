@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  auth:
+    build: "./auth"
+    ports:
+      - "3000:3000"
+  membership:
+    build: "./membership"
+    ports:
+      - "3001:3001"
