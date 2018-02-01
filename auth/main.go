@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/config"
@@ -20,7 +20,7 @@ func main() {
 	privateKey, err := config.InitPrivateKey()
 
 	if err != nil {
-		fmt.Println(err)
+		os.Exit(1)
 	}
 
 	// init auth handler
