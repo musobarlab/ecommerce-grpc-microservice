@@ -51,6 +51,7 @@ func (h *GrpcCategoryHandler) FindByID(ctx context.Context, arg *pb.CategoryQuer
 	return categoryResponse, nil
 }
 
+// FindAll
 func (h *GrpcCategoryHandler) FindAll(arg *pb.CategoryQueryRequest, stream pb.CategoryService_FindAllServer) error {
 
 	categoryResult := <-h.categoryUseCase.FindAll()
