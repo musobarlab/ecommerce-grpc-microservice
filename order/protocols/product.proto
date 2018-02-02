@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package product;
+
+message ProductQueryRequest{
+  int32 ID = 1;
+  int32 CategoryID = 2;
+}
+
+message ProductResponse{
+  int32 ID = 1;
+  int32 CategoryID = 2;
+  string Name = 3;
+  string Description = 4;
+  string Image = 5;
+  int32 Stock = 6;
+  double Price = 7;
+}
+
+message ProductListResponse{
+  repeated ProductResponse ProductList = 1;
+}
+
+service ProductService {
+  rpc FindByID (ProductQueryRequest) returns (ProductResponse);
+  rpc FindByCategory (ProductQueryRequest) returns (stream ProductListResponse);
+  rpc FindAll (ProductQueryRequest) returns (stream ProductListResponse);
+}
