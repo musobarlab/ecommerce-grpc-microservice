@@ -8,6 +8,7 @@ import (
 
 	middleware "github.com/wuriyanto48/ecommerce-grpc-microservice/product/grpc/middleware"
 
+	pbCategory "github.com/wuriyanto48/ecommerce-grpc-microservice/product/protogo/category"
 	pbProduct "github.com/wuriyanto48/ecommerce-grpc-microservice/product/protogo/product"
 
 	productPresenterPackage "github.com/wuriyanto48/ecommerce-grpc-microservice/product/src/presenter"
@@ -17,8 +18,9 @@ import (
 
 //Server data structure, grpc server model
 type Server struct {
-	productGrpcHandler *productPresenterPackage.GrpcProductHandler
-	grpcMiddleware     *middleware.Interceptor
+	categoryGrpcHandler *productPresenterPackage.GrpcCategoryHandler
+	productGrpcHandler  *productPresenterPackage.GrpcProductHandler
+	grpcMiddleware      *middleware.Interceptor
 }
 
 // Serve insecure server/ no server side encryption
@@ -38,6 +40,7 @@ func (s *Server) Serve(port uint) error {
 	)
 
 	//Register all sub server here
+	pbCategory.RegisterCategoryServiceServer(server, s.categoryGrpcHandler)
 	pbProduct.RegisterProductServiceServer(server, s.productGrpcHandler)
 	//end register server
 
@@ -53,7 +56,7 @@ func (s *Server) Serve(port uint) error {
 }
 
 //NewGrpcServer function, return: Pointer GRPC Server, or error otherwise
-func NewGrpcServer(productGrpcHandler *productPresenterPackage.GrpcProductHandler) (*Server, error) {
+func NewGrpcServer(categoryGrpcHandler *productPresenterPackage.GrpcCategoryHandler, productGrpcHandler *productPresenterPackage.GrpcProductHandler) (*Server, error) {
 	//init Auth Key
 
 	grpcAuthKey, ok := os.LookupEnv("GRPC_AUTH_KEY")
@@ -65,8 +68,9 @@ func NewGrpcServer(productGrpcHandler *productPresenterPackage.GrpcProductHandle
 	grpcMiddleware := middleware.NewInterceptor(grpcAuthKey)
 
 	return &Server{
-		productGrpcHandler: productGrpcHandler,
-		grpcMiddleware:     grpcMiddleware,
+		categoryGrpcHandler: categoryGrpcHandler,
+		productGrpcHandler:  productGrpcHandler,
+		grpcMiddleware:      grpcMiddleware,
 	}, nil
 
 }

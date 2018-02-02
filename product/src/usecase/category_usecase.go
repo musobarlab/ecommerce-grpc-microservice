@@ -31,7 +31,7 @@ func (u *categoryUseCaseImpl) FindByID(id int) <-chan UseCaseResult {
 			return
 		}
 
-		category, ok := categoryResult.Result.(model.Category)
+		category, ok := categoryResult.Result.(*model.Category)
 
 		if !ok {
 			output <- UseCaseResult{Error: errors.New("Result is not Category")}

@@ -18,13 +18,20 @@ const GrpcPortDefault = 3002
 
 // grpcMain
 func grpcMain() {
+
+	//init category grpc handler
+	categoryQuery := productQueryPackage.NewCategoryQueryInMemory(inMemDB.GetCategoryInMemoryDb())
+	categoryUseCase := productUsecasePackage.NewCategoryUseCase(categoryQuery)
+
+	categoryGrpcHandler := productPresenterPackage.NewGrpcCategoryHandler(categoryUseCase)
+
 	//init product grpc handler
 	productQuery := productQueryPackage.NewProductQueryInMemory(inMemDB.GetProductInMemoryDb())
 	productUseCase := productUsecasePackage.NewProductUseCase(productQuery)
 
 	productGrpcHandler := productPresenterPackage.NewGrpcProductHandler(productUseCase)
 
-	grpcServer, err := productGrpc.NewGrpcServer(productGrpcHandler)
+	grpcServer, err := productGrpc.NewGrpcServer(categoryGrpcHandler, productGrpcHandler)
 
 	if err != nil {
 		fmt.Printf("Error create grpc server: %s", err.Error())
