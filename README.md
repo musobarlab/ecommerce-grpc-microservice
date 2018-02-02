@@ -1,6 +1,6 @@
-# Golang Mini E-Commerce GRPC Microservices
+# Golang Mini E-Commerce GRPC Microservices with Multiple Container
 
-Demo(Building E-Commerce Microservice using Golang, Rest and GRPC
+Demo(Building E-Commerce Microservice using Golang, Rest and GRPC)
 
 ### TODO
   - [ ] Create Backend for Product, Order, & Payment
