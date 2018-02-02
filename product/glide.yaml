@@ -2,3 +2,5 @@ package: github.com/wuriyanto48/ecommerce-grpc-microservice/product
 import:
 - package: github.com/shopspring/decimal
   version: 1.0.0
+- package: google.golang.org/grpc
+  version: v1.9.2

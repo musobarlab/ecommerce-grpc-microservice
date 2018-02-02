@@ -1,0 +1,8 @@
+.DS_Store
+.gitignore
+.gitmodules
+.travis.yml
+.git
+
+product-osx
+product-linux

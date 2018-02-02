@@ -20,3 +20,6 @@ coverages/*.txt
 
 .env
 .idea/
+
+product-osx
+product-linux

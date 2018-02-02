@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package category;
+
+message CategoryQueryRequest{
+  int32 ID = 1;
+}
+
+message CategoryResponse{
+  int32 ID = 1;
+  string Name = 2;
+  string Description = 3;
+  string Image = 4;
+}
+
+message CategoryListReponse{
+  repeated CategoryResponse CategoryList = 1;
+}
+
+service CategoryService {
+  rpc FindByID (CategoryQueryRequest) returns (CategoryResponse);
+  rpc FindAll (CategoryQueryRequest) returns (stream CategoryListReponse);
+}
