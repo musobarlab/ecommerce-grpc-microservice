@@ -12,4 +12,8 @@ services:
   product:
     build: "./product"
     ports:
-      - "3002:3002"    
+      - "3002:3002"
+  frontend:
+    build: "./frontend"
+    ports:
+      - "3003:3003"    
