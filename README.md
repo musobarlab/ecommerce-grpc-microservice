@@ -14,9 +14,11 @@ Demo(Building E-Commerce Microservice using Golang, Rest and GRPC)
     ```shell
     $ make up
     ```
+
+  - And visit the Front End `http://localhost:3003`
+
   - Stop Container
 
     ```shell
     $ make down
     ```
-  - And visit Front End `http://localhost:3003`
