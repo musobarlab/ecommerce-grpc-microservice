@@ -1,4 +1,4 @@
-# Golang Mini E-Commerce GRPC Microservices with Multiple Container
+# Mini E-Commerce Build with Go, GRPC, and Microservices Architecture with Multiple Docker Container
 
 Demo(Building E-Commerce Microservice using Golang, Rest and GRPC)
 
