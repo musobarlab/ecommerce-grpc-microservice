@@ -18,5 +18,4 @@ coverage.txt
 coverages/*.txt
 .DS_Store
 
-.env
 .idea/
