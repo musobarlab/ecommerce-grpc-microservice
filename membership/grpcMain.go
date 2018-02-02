@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/config"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/db"
 
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/presenter"
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/query"
@@ -20,8 +20,8 @@ const GrpcPortDefault = 3001
 func grpcMain() {
 
 	//init member handler
-	memberQuery := query.NewMemberQueryInMemory(config.GetInMemoryDb())
-	memberRepository := repository.NewMemberRepositoryInMemory(config.GetInMemoryDb())
+	memberQuery := query.NewMemberQueryInMemory(db.GetInMemoryDb())
+	memberRepository := repository.NewMemberRepositoryInMemory(db.GetInMemoryDb())
 
 	memberUseCase := usecase.NewMemberUseCase(memberRepository, memberQuery)
 

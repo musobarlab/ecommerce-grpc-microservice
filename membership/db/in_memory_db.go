@@ -1,4 +1,4 @@
-package config
+package db
 
 import (
 	"encoding/json"
