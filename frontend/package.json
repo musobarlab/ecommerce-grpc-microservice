@@ -9,6 +9,7 @@
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
+    "dotenv": "^5.0.0",
     "ejs": "^2.5.7",
     "express": "~4.13.4",
     "jade": "~1.11.0",

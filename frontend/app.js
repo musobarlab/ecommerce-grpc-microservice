@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -8,6 +10,8 @@ const bodyParser = require('body-parser');
 const indexRouter = require('./src/routes/index');
 
 const app = express();
+
+console.log(process.env.AUTH_BASE_URL)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
