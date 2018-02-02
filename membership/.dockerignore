@@ -3,3 +3,6 @@
 .gitmodules
 .travis.yml
 .git
+
+membership-osx
+membership-linux

@@ -3,3 +3,6 @@
 .gitmodules
 .travis.yml
 .git
+
+auth-osx
+auth-linux
