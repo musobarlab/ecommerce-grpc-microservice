@@ -1,0 +1,9 @@
+.DS_Store
+.gitignore
+.gitmodules
+.travis.yml
+.git
+
+node_modules/
+
+npm-debug.log
