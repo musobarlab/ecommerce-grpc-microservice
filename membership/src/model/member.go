@@ -6,7 +6,7 @@ import (
 
 // Member model
 type Member struct {
-	ID           string    `json:"ID"`
+	ID           string    `json:"id"`
 	FirstName    string    `json:"firstName"`
 	LastName     string    `json:"lastName"`
 	Email        string    `json:"email"`
@@ -17,6 +17,9 @@ type Member struct {
 	CreatedAt    time.Time `json:"createdAt"`
 	UpdatedAt    time.Time `json:"updatedAt"`
 }
+
+//Members type
+type Members []Member
 
 // NewMember function for initialise Member model
 func NewMember() *Member {
