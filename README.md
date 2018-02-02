@@ -16,6 +16,6 @@ Demo(Building E-Commerce Microservice using Golang, Rest and GRPC
     ```
   - Stop Container
 
-  ```shell
-  $ make down
-  ```
+    ```shell
+    $ make down
+    ```
