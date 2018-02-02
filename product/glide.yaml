@@ -1,2 +1,4 @@
 package: github.com/wuriyanto48/ecommerce-grpc-microservice/product
-import: []
+import:
+- package: github.com/shopspring/decimal
+  version: 1.0.0
