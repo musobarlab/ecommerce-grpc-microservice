@@ -1,11 +1,19 @@
 {
-  "name": "mini-ecommerce-frontend",
-  "version": "1.0.0",
-  "description": "Mini Ecommerce Web App",
-  "main": "index.js",
+  "name": "go-ecommerce",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "author": "Wuriyanto Musobar",
-  "license": "ISC"
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "^2.5.7",
+    "express": "~4.13.4",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "request": "^2.83.0",
+    "serve-favicon": "~2.3.0"
+  }
 }
