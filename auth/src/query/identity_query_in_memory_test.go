@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/model"
 )
 
 func TestIdentityQueryInMemory(t *testing.T) {

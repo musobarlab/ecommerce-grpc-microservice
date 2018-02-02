@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/model"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/token"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/usecase"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/token"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/usecase"
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/utils"
 )
 

@@ -6,11 +6,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/model"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/query"
-	queryMocks "github.com/wuriyanto48/ecommerce-grpc-microservice/auth/query/mocks"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/token"
-	atMocks "github.com/wuriyanto48/ecommerce-grpc-microservice/auth/token/mocks"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/query"
+	queryMocks "github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/query/mocks"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/token"
+	atMocks "github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/token/mocks"
 )
 
 func generateAccessTokenResult() <-chan token.AccessTokenResponse {

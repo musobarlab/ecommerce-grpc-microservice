@@ -3,7 +3,7 @@ package query
 import (
 	"errors"
 
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/model"
 )
 
 // identityQueryInMemory model, this private model implement IdentityQuery

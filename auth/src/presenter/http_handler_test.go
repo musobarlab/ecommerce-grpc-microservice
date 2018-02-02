@@ -10,11 +10,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/model"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/query"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/token"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/usecase"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/usecase/mocks"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/query"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/token"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/usecase"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/usecase/mocks"
 )
 
 func generateIdentityAccessTokenResult() <-chan usecase.UseCaseResult {

@@ -12,10 +12,10 @@ auth-linux: main.go
 format:
 	find . -name "*.go" -not -path "./vendor/*" -not -path ".git/*" | xargs gofmt -s -d -w
 
-test: ./model ./query ./token ./usecase ./presenter
+test: ./src/model ./src/query ./src/token ./src/usecase ./src/presenter
 	go test -race \
-					./model \
-					./query \
-					./token \
-					./usecase \
-					./presenter
+					./src/model \
+					./src/query \
+					./src/token \
+					./src/usecase \
+					./src/presenter

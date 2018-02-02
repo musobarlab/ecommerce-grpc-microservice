@@ -3,9 +3,9 @@ package usecase
 import (
 	"errors"
 
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/model"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/query"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/token"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/query"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/token"
 )
 
 // authUseCaseImpl model

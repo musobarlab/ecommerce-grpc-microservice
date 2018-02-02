@@ -7,11 +7,11 @@ import (
 
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/config"
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/middleware"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/model"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/presenter"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/query"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/token"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/usecase"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/presenter"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/query"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/token"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/usecase"
 )
 
 func main() {
