@@ -1,2 +1,14 @@
 package: github.com/wuriyanto48/ecommerce-grpc-microservice/order
-import: []
+import:
+- package: google.golang.org/grpc
+  version: v1.9.2
+- package: github.com/shopspring/decimal
+  version: 1.0.0
+- package: github.com/joho/godotenv
+  version: v1.2.0
+- package: github.com/dgrijalva/jwt-go
+  version: v3.1.0
+- package: github.com/stretchr/testify
+  version: v1.2.1
+  subpackages:
+  - assert
