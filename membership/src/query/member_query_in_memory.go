@@ -3,7 +3,7 @@ package query
 import (
 	"errors"
 
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/model"
 )
 
 // memberQueryInMemory model

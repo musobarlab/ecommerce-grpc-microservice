@@ -3,7 +3,7 @@ package config
 import (
 	"time"
 
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/model"
 )
 
 // GetInMemoryDb return *model.Member map, this fake database just for testing purposes only

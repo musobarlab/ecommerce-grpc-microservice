@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/model"
 )
 
 func TestMemberQueryInMemory(t *testing.T) {

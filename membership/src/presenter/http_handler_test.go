@@ -14,9 +14,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/middleware"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/model"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/usecase"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/usecase/mocks"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/usecase"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/usecase/mocks"
 )
 
 func generateMeSuccessResult() <-chan usecase.UseCaseResult {

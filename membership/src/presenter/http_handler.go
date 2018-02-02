@@ -3,8 +3,8 @@ package presenter
 import (
 	"net/http"
 
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/model"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/usecase"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/usecase"
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/utils"
 )
 

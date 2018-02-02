@@ -7,10 +7,10 @@ import (
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/config"
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/middleware"
 
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/presenter"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/query"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/repository"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/usecase"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/presenter"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/query"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/repository"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/usecase"
 )
 
 func main() {

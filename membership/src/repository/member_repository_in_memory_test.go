@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/model"
 )
 
 func TestMemberRepositoryInMemory(t *testing.T) {

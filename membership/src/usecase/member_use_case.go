@@ -3,9 +3,9 @@ package usecase
 import (
 	"errors"
 
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/model"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/query"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/repository"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/query"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/repository"
 )
 
 // memberUseCaseImpl model

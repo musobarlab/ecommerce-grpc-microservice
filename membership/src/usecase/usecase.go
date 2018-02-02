@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/model"
 )
 
 // UseCaseResult model

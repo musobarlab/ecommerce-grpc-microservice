@@ -12,9 +12,9 @@ membership-linux: main.go
 format:
 	find . -name "*.go" -not -path "./vendor/*" -not -path ".git/*" | xargs gofmt -s -d -w
 
-test: ./model ./query ./usecase ./presenter
+test: ./src/model ./src/query ./src/usecase ./src/presenter
 	go test -race \
-					./model \
-					./query \
-					./usecase \
-					./presenter
+					./src/model \
+					./src/query \
+					./src/usecase \
+					./src/presenter

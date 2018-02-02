@@ -7,11 +7,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/model"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/query"
-	queryMocks "github.com/wuriyanto48/ecommerce-grpc-microservice/membership/query/mocks"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/repository"
-	repoMocks "github.com/wuriyanto48/ecommerce-grpc-microservice/membership/repository/mocks"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/model"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/query"
+	queryMocks "github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/query/mocks"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/repository"
+	repoMocks "github.com/wuriyanto48/ecommerce-grpc-microservice/membership/src/repository/mocks"
 )
 
 func generateFindByIdSuccessMemberResult() <-chan repository.RepositoryResult {
