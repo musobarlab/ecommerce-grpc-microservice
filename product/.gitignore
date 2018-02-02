@@ -20,5 +20,7 @@ coverages/*.txt
 
 .idea/
 
+grpc_client_test/
+
 product-osx
 product-linux
