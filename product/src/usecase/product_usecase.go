@@ -31,7 +31,7 @@ func (u *productUseCaseImpl) FindByID(id int) <-chan UseCaseResult {
 			return
 		}
 
-		product, ok := productResult.Result.(model.Product)
+		product, ok := productResult.Result.(*model.Product)
 
 		if !ok {
 			output <- UseCaseResult{Error: errors.New("Result is not Product")}

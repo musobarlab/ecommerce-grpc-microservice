@@ -4,3 +4,8 @@ import:
   version: 1.0.0
 - package: google.golang.org/grpc
   version: v1.9.2
+- package: golang.org/x/net
+  subpackages:
+  - context
+- package: github.com/joho/godotenv
+  version: v1.2.0

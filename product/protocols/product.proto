@@ -14,7 +14,7 @@ message ProductResponse{
   string Description = 4;
   string Image = 5;
   int32 Stock = 6;
-  float Price = 7;
+  double Price = 7;
 }
 
 message ProductListResponse{
