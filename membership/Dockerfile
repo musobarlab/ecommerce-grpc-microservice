@@ -14,6 +14,9 @@ RUN apk update && apk add --no-cache $BUILD_PACKAGES \
   && glide install \
   && apk del $BUILD_PACKAGES
 
+# Copy environment variable to source dir
+COPY .env $SRC_DIR.env
+
 RUN cd $SRC_DIR; CGO_ENABLED=0 GOOS=linux go build -ldflags '-w -s' -a -o main
 
 ENTRYPOINT ["./main"]

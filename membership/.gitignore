@@ -18,7 +18,9 @@ coverage.txt
 coverages/*.txt
 .DS_Store
 
-.env
 .idea/
 
+grpc_test/
+
 membership-osx
+membership-linux

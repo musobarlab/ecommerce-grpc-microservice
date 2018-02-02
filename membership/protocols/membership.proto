@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package membership;
+
+message QueryRequest{
+  string ID = 1;
+  string Email = 2;
+}
+
+message MembershipRequest{
+  string ID = 1;
+  string FirstName = 2;
+  string LastName = 3;
+  string Email = 4;
+  string Password = 5;
+  string PasswordSalt = 6;
+  string BirthDate = 7;
+}
+
+message MembershipResponse{
+  string ID = 1;
+  string FirstName = 2;
+  string LastName = 3;
+  string Email = 4;
+  string Password = 5;
+  string PasswordSalt = 6;
+  string BirthDate = 7;
+  int32 Version = 8;
+  string CreatedAt = 9;
+  string UpdatedAt = 10;
+}
+
+service MembershipService {
+  rpc Save (MembershipRequest) returns (MembershipResponse);
+  rpc FindByID (QueryRequest) returns (stream MembershipResponse);
+  rpc FindByEmail (QueryRequest) returns (stream MembershipResponse);
+}
