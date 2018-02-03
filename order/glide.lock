@@ -1,5 +1,5 @@
-hash: 888ff30e6f5ed2c4935a78ff7a1491f2d5257967abd120be5a46a548c32d4f7e
-updated: 2018-02-03T03:15:55.011347574+07:00
+hash: f67cd3785ac715a0b15b04ab47bcf4db99c6744214f42a9b564cf76ff4c7efa1
+updated: 2018-02-03T14:56:35.228586911+07:00
 imports:
 - name: github.com/dgrijalva/jwt-go
   version: dbeaa9332f19a944acb5736b4456cfcc02140e29
@@ -11,6 +11,8 @@ imports:
   - ptypes/any
   - ptypes/duration
   - ptypes/timestamp
+- name: github.com/gorilla/mux
+  version: 53c1911da2b537f792e7cafcb446b05ffe33b996
 - name: github.com/joho/godotenv
   version: a79fa1e548e2c689c241d10173efd51e5d689d5b
 - name: github.com/shopspring/decimal
@@ -19,6 +21,10 @@ imports:
   version: 12b6f73e6084dad08a7c6e575284b177ecafbc71
   subpackages:
   - assert
+- name: gitlab.com/Wuriyanto/big-dream-be
+  version: f4357eaaba7dbd75360a349173525dae34765e0e
+  subpackages:
+  - middleware
 - name: golang.org/x/net
   version: 1a68b1313cf4ad7778376e82641197b60c02f65c
   subpackages:

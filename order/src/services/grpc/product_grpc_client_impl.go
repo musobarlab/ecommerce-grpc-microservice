@@ -2,6 +2,7 @@ package grpc
 
 import (
 	"strconv"
+	"time"
 
 	"golang.org/x/net/context"
 
@@ -70,6 +71,9 @@ func (c *productGrpcClientImpl) FindByID(id int) <-chan ServiceResult {
 			Image:       res.Image,
 			Stock:       stock,
 			Price:       price,
+			Version:     1,
+			CreatedAt:   time.Now(),
+			UpdatedAt:   time.Now(),
 		}
 
 		output <- ServiceResult{Result: product}
@@ -122,6 +126,9 @@ func (c *productGrpcClientImpl) FindByCategory(categoryID int) <-chan ServiceRes
 				Image:       res.Image,
 				Stock:       stock,
 				Price:       price,
+				Version:     1,
+				CreatedAt:   time.Now(),
+				UpdatedAt:   time.Now(),
 			}
 
 			products = append(products, product)
@@ -177,6 +184,9 @@ func (c *productGrpcClientImpl) FindAll() <-chan ServiceResult {
 				Image:       res.Image,
 				Stock:       stock,
 				Price:       price,
+				Version:     1,
+				CreatedAt:   time.Now(),
+				UpdatedAt:   time.Now(),
 			}
 
 			products = append(products, product)

@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/gorilla/mux"
 	configEnv "github.com/joho/godotenv"
 
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/order/config"
@@ -84,6 +85,17 @@ func main() {
 
 	orderHttpHandler := presenter.NewHttpOrderHandler(orderUseCase)
 
-	http.Handle("/api/me", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.Me())))
-	http.ListenAndServe(":3004", nil)
+	//routing
+
+	r := mux.NewRouter()
+
+	r.Handle("/api/me", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.Me()))).Methods("GET")
+
+	r.Handle("/api/products", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.GetProducts()))).Methods("GET")
+	r.Handle("/api/products/{id}", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.GetProduct()))).Methods("GET")
+
+	r.Handle("/api/categories", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.GetCategories()))).Methods("GET")
+	r.Handle("/api/categories/{id}", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.GetCategory()))).Methods("GET")
+
+	http.ListenAndServe(":3004", r)
 }

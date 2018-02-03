@@ -15,3 +15,5 @@ import:
 - package: golang.org/x/net
   subpackages:
   - context
+- package: github.com/gorilla/mux
+  version: v1.6.1
