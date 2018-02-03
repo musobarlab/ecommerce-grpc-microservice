@@ -21,6 +21,8 @@ func NewMemberRepositoryInMemory(db map[string]*model.Member) MembershipReposito
 func (r *memberRepositoryInMemory) Save(m *model.Member) <-chan error {
 	output := make(chan error)
 	go func() {
+		defer close(output)
+
 		member, ok := r.db[m.ID]
 		if !ok {
 			m.Version++
@@ -42,6 +44,8 @@ func (r *memberRepositoryInMemory) Save(m *model.Member) <-chan error {
 func (r *memberRepositoryInMemory) Load(id string) <-chan RepositoryResult {
 	output := make(chan RepositoryResult)
 	go func() {
+		defer close(output)
+
 		member, ok := r.db[id]
 		if !ok {
 			output <- RepositoryResult{Error: errors.New("member not found")}

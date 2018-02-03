@@ -20,6 +20,8 @@ func NewMemberQueryInMemory(db map[string]*model.Member) MembershipQuery {
 func (q *memberQueryInMemory) FindByEmail(email string) <-chan QueryResult {
 	output := make(chan QueryResult)
 	go func() {
+		defer close(output)
+
 		var member *model.Member
 		for _, v := range q.db {
 			if v.Email == email {
