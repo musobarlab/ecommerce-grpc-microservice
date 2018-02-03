@@ -39,6 +39,8 @@ func (c *productGrpcClientImpl) FindByID(id int) <-chan ServiceResult {
 	output := make(chan ServiceResult)
 
 	go func() {
+		defer close(output)
+
 		md := metadata.Pairs("authorization", c.grpcAuthKey)
 		ctx := metadata.NewOutgoingContext(context.Background(), md)
 		arg := &pb.ProductQueryRequest{ID: int32(id)}

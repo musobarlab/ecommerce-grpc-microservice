@@ -29,6 +29,8 @@ func (u *orderUseCaseImpl) FindMemberByID(id string) <-chan UseCaseResult {
 	output := make(chan UseCaseResult)
 
 	go func() {
+		defer close(output)
+
 		memberResult := <-u.membershipGrpcService.FindByID(id)
 
 		if memberResult.Error != nil {

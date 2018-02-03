@@ -38,6 +38,8 @@ func NewMembershipGrpcClient(host, grpcAuthKey string) (*membershipGrpcClientImp
 func (c *membershipGrpcClientImpl) FindByID(id string) <-chan ServiceResult {
 	output := make(chan ServiceResult)
 	go func() {
+		defer close(output)
+
 		md := metadata.Pairs("authorization", c.grpcAuthKey)
 		ctx := metadata.NewOutgoingContext(context.Background(), md)
 		arg := &pb.QueryRequest{ID: id}

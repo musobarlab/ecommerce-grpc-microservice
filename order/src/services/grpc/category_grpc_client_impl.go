@@ -36,6 +36,8 @@ func (c *categoryGrpcClientImpl) FindByID(id int) <-chan ServiceResult {
 	output := make(chan ServiceResult)
 
 	go func() {
+		defer close(output)
+
 		md := metadata.Pairs("authorization", c.grpcAuthKey)
 		ctx := metadata.NewOutgoingContext(context.Background(), md)
 		arg := &pb.CategoryQueryRequest{ID: int32(id)}
@@ -64,6 +66,8 @@ func (c *categoryGrpcClientImpl) FindAll() <-chan ServiceResult {
 	output := make(chan ServiceResult)
 
 	go func() {
+		defer close(output)
+
 		md := metadata.Pairs("authorization", c.grpcAuthKey)
 		ctx := metadata.NewOutgoingContext(context.Background(), md)
 		arg := &pb.CategoryQueryRequest{}
