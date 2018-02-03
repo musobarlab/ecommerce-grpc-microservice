@@ -20,6 +20,8 @@ coverages/*.txt
 
 .idea/
 
+scratch/
+
 node_modules/
 
 npm-debug.log
