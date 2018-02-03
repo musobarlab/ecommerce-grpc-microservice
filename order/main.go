@@ -91,11 +91,11 @@ func main() {
 
 	r.Handle("/api/me", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.Me()))).Methods("GET")
 
-	r.Handle("/api/products", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.GetProducts()))).Methods("GET")
-	r.Handle("/api/products/{id}", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.GetProduct()))).Methods("GET")
+	r.Handle("/api/products", middleware.LogRequest(orderHttpHandler.GetProducts())).Methods("GET")
+	r.Handle("/api/products/{id}", middleware.LogRequest(orderHttpHandler.GetProduct())).Methods("GET")
 
-	r.Handle("/api/categories", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.GetCategories()))).Methods("GET")
-	r.Handle("/api/categories/{id}", middleware.LogRequest(middleware.Bearer(publicKey, orderHttpHandler.GetCategory()))).Methods("GET")
+	r.Handle("/api/categories", middleware.LogRequest(orderHttpHandler.GetCategories())).Methods("GET")
+	r.Handle("/api/categories/{id}", middleware.LogRequest(orderHttpHandler.GetCategory())).Methods("GET")
 
 	http.ListenAndServe(":3004", r)
 }
