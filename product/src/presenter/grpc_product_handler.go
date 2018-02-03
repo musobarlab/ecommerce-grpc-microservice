@@ -75,8 +75,6 @@ func (h *GrpcProductHandler) FindByCategory(arg *pb.ProductQueryRequest, stream 
 		return status.Error(codes.InvalidArgument, err.Error())
 	}
 
-	var productListResponse []*pb.ProductResponse
-
 	for _, product := range products {
 
 		stock, _ := strconv.Atoi(product.Stock.String())
@@ -91,13 +89,9 @@ func (h *GrpcProductHandler) FindByCategory(arg *pb.ProductQueryRequest, stream 
 			Price:       price,
 		}
 
-		productListResponse = append(productListResponse, productResponse)
-	}
-
-	response := &pb.ProductListResponse{ProductList: productListResponse}
-
-	if err := stream.Send(response); err != nil {
-		return status.Error(codes.Internal, err.Error())
+		if err := stream.Send(productResponse); err != nil {
+			return status.Error(codes.Internal, err.Error())
+		}
 	}
 
 	return nil
@@ -119,8 +113,6 @@ func (h *GrpcProductHandler) FindAll(arg *pb.ProductQueryRequest, stream pb.Prod
 		return status.Error(codes.InvalidArgument, err.Error())
 	}
 
-	var productListResponse []*pb.ProductResponse
-
 	for _, product := range products {
 
 		stock, _ := strconv.Atoi(product.Stock.String())
@@ -135,13 +127,9 @@ func (h *GrpcProductHandler) FindAll(arg *pb.ProductQueryRequest, stream pb.Prod
 			Price:       price,
 		}
 
-		productListResponse = append(productListResponse, productResponse)
-	}
-
-	response := &pb.ProductListResponse{ProductList: productListResponse}
-
-	if err := stream.Send(response); err != nil {
-		return status.Error(codes.Internal, err.Error())
+		if err := stream.Send(productResponse); err != nil {
+			return status.Error(codes.Internal, err.Error())
+		}
 	}
 
 	return nil

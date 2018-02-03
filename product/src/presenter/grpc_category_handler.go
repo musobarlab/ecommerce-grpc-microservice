@@ -67,8 +67,6 @@ func (h *GrpcCategoryHandler) FindAll(arg *pb.CategoryQueryRequest, stream pb.Ca
 		return status.Error(codes.InvalidArgument, err.Error())
 	}
 
-	var categoryListResponse []*pb.CategoryResponse
-
 	for _, category := range categories {
 		categoryResponse := &pb.CategoryResponse{
 			ID:          int32(category.ID),
@@ -77,13 +75,9 @@ func (h *GrpcCategoryHandler) FindAll(arg *pb.CategoryQueryRequest, stream pb.Ca
 			Image:       category.Image,
 		}
 
-		categoryListResponse = append(categoryListResponse, categoryResponse)
-	}
-
-	response := &pb.CategoryListReponse{CategoryList: categoryListResponse}
-
-	if err := stream.Send(response); err != nil {
-		return status.Error(codes.Internal, err.Error())
+		if err := stream.Send(categoryResponse); err != nil {
+			return status.Error(codes.Internal, err.Error())
+		}
 	}
 
 	return nil
