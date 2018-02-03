@@ -5,6 +5,7 @@ const router = express.Router();
 
 const AuthService = require('../service/auth');
 const MeService = require('../service/me');
+const ProductService = require('../service/product');
 
 const TokenStorage = require('../utils/token_storage');
 
@@ -17,13 +18,27 @@ router.get('/', (req, res, next) => {
   let token = tokenStorage.get();
 
   const meService = new MeService(BASE_URL);
+  const productService = new ProductService(BASE_URL);
   meService.me(token, (err, body) => {
     if(err){
-      return res.render('pages/index', { title: 'Go Ecommerce', subtitle: 'Welcome', me: null });
-    }
+      productService.getAll((err, products) => {
+        if(err){
+          return res.render('pages/index', { title: 'Go Ecommerce', subtitle: 'Welcome', products: null, me: null });
+        }
+        let productJson = JSON.parse(products);
+        return res.render('pages/index', { title: 'Go Ecommerce', subtitle: 'Welcome', products: productJson, me: null });
+      });
+    } else {
+      productService.getAll((err, products) => {
+        if(err){
+          return res.render('pages/index', { title: 'Go Ecommerce', subtitle: 'Welcome', products: null, me: null });
+        }
 
-    let profile = JSON.parse(body);
-    return res.render('pages/index', { title: 'Go Ecommerce', subtitle: 'Welcome', me: profile });
+        let profile = JSON.parse(body);
+        let productJson = JSON.parse(products);
+        return res.render('pages/index', { title: 'Go Ecommerce', subtitle: 'Welcome', products: productJson, me: profile });
+      });
+    }
   });
 });
 
