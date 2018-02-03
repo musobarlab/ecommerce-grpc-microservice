@@ -23,6 +23,6 @@ message ProductListResponse{
 
 service ProductService {
   rpc FindByID (ProductQueryRequest) returns (ProductResponse);
-  rpc FindByCategory (ProductQueryRequest) returns (stream ProductListResponse);
-  rpc FindAll (ProductQueryRequest) returns (stream ProductListResponse);
+  rpc FindByCategory (ProductQueryRequest) returns (stream ProductResponse);
+  rpc FindAll (ProductQueryRequest) returns (stream ProductResponse);
 }
