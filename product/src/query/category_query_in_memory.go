@@ -20,6 +20,8 @@ func NewCategoryQueryInMemory(db map[int]*model.Category) CategoryQuery {
 func (q *categoryQueryInMemory) FindByID(id int) <-chan QueryResult {
 	output := make(chan QueryResult)
 	go func() {
+		defer close(output)
+
 		category, ok := q.db[id]
 		if !ok {
 			output <- QueryResult{Error: errors.New("category not found")}
@@ -35,6 +37,8 @@ func (q *categoryQueryInMemory) FindByID(id int) <-chan QueryResult {
 func (q *categoryQueryInMemory) FindAll() <-chan QueryResult {
 	output := make(chan QueryResult)
 	go func() {
+		defer close(output)
+
 		var categories model.Categories
 		for _, v := range q.db {
 			categories = append(categories, *v)

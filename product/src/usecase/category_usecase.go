@@ -24,6 +24,8 @@ func (u *categoryUseCaseImpl) FindByID(id int) <-chan UseCaseResult {
 	output := make(chan UseCaseResult)
 
 	go func() {
+		defer close(output)
+
 		categoryResult := <-u.categoryQuery.FindByID(id)
 
 		if categoryResult.Error != nil {
@@ -49,6 +51,8 @@ func (u *categoryUseCaseImpl) FindAll() <-chan UseCaseResult {
 	output := make(chan UseCaseResult)
 
 	go func() {
+		defer close(output)
+
 		categoryResult := <-u.categoryQuery.FindAll()
 
 		if categoryResult.Error != nil {

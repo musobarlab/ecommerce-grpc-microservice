@@ -20,6 +20,8 @@ func NewProductQueryInMemory(db map[int]*model.Product) ProductQuery {
 func (q *productQueryInMemory) FindByID(id int) <-chan QueryResult {
 	output := make(chan QueryResult)
 	go func() {
+		defer close(output)
+
 		product, ok := q.db[id]
 		if !ok {
 			output <- QueryResult{Error: errors.New("product not found")}
@@ -35,6 +37,8 @@ func (q *productQueryInMemory) FindByID(id int) <-chan QueryResult {
 func (q *productQueryInMemory) FindAll() <-chan QueryResult {
 	output := make(chan QueryResult)
 	go func() {
+		defer close(output)
+
 		var products model.Products
 		for _, v := range q.db {
 			products = append(products, *v)
@@ -49,6 +53,8 @@ func (q *productQueryInMemory) FindAll() <-chan QueryResult {
 func (q *productQueryInMemory) FindByCategory(categoryID int) <-chan QueryResult {
 	output := make(chan QueryResult)
 	go func() {
+		defer close(output)
+
 		var products model.Products
 		for _, v := range q.db {
 			if v.CategoryID == categoryID {
