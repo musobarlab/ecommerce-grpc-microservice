@@ -16,4 +16,8 @@ services:
   frontend:
     build: "./frontend"
     ports:
-      - "3003:3003"    
+      - "3003:3003"
+  order:
+    build: "./order"
+    ports:
+      - "3004:3004"
