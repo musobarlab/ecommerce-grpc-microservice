@@ -11,7 +11,7 @@ const TokenStorage = require('../utils/token_storage');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  const BASE_URL = process.env.MEMBERSHIP_BASE_URL;
+  const BASE_URL = process.env.ORDER_BASE_URL;
 
   const tokenStorage = new TokenStorage();
   let token = tokenStorage.get();
@@ -28,7 +28,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/login', (req, res, next) => {
-  const BASE_URL = process.env.MEMBERSHIP_BASE_URL;
+  const BASE_URL = process.env.ORDER_BASE_URL;
 
   const tokenStorage = new TokenStorage();
   let token = tokenStorage.get();
@@ -67,7 +67,7 @@ router.post('/auth', (req, res, next) => {
 });
 
 router.get('/me', (req, res, next) => {
-  const BASE_URL = process.env.MEMBERSHIP_BASE_URL;
+  const BASE_URL = process.env.ORDER_BASE_URL;
 
   const tokenStorage = new TokenStorage();
   let token = tokenStorage.get();
