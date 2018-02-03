@@ -1,6 +1,7 @@
 package grpc
 
 import (
+	"strconv"
 	"time"
 
 	"golang.org/x/net/context"
@@ -55,7 +56,8 @@ func (c *membershipGrpcClientImpl) FindByID(id string) <-chan ServiceResult {
 		}
 
 		//birthDate from string to time
-		birthDate, err := time.Parse(time.RFC3339, res.BirthDate)
+		bodInt, _ := strconv.Atoi(res.BirthDate)
+		birthDate := time.Unix(int64(bodInt), int64(bodInt))
 
 		if err != nil {
 			output <- ServiceResult{Error: err}
@@ -63,7 +65,8 @@ func (c *membershipGrpcClientImpl) FindByID(id string) <-chan ServiceResult {
 		}
 
 		//createdAt from string to time
-		createdAt, err := time.Parse(time.RFC3339, res.CreatedAt)
+		createdAtInt, _ := strconv.Atoi(res.CreatedAt)
+		createdAt := time.Unix(int64(bodInt), int64(createdAtInt))
 
 		if err != nil {
 			output <- ServiceResult{Error: err}
@@ -71,7 +74,8 @@ func (c *membershipGrpcClientImpl) FindByID(id string) <-chan ServiceResult {
 		}
 
 		//updatedAt from string to time
-		updatedAt, err := time.Parse(time.RFC3339, res.UpdatedAt)
+		updatedAtInt, _ := strconv.Atoi(res.UpdatedAt)
+		updatedAt := time.Unix(int64(bodInt), int64(updatedAtInt))
 
 		if err != nil {
 			output <- ServiceResult{Error: err}
