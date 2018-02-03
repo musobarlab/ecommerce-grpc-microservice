@@ -1,6 +1,7 @@
 package grpc
 
 import (
+	"io"
 	"strconv"
 	"time"
 
@@ -97,16 +98,20 @@ func (c *productGrpcClientImpl) FindByCategory(categoryID int) <-chan ServiceRes
 			return
 		}
 
-		productResList, err := resStream.Recv()
-
-		if err != nil {
-			output <- ServiceResult{Error: err}
-			return
-		}
-
 		var products model.Products
 
-		for _, res := range productResList.ProductList {
+		for {
+			res, err := resStream.Recv()
+
+			if err == io.EOF {
+				break
+			}
+
+			if err != nil {
+				output <- ServiceResult{Error: err}
+				return
+			}
+
 			//stock from int32 to decimal
 			stock, err := decimal.NewFromString(strconv.Itoa(int(res.Stock)))
 
@@ -155,16 +160,20 @@ func (c *productGrpcClientImpl) FindAll() <-chan ServiceResult {
 			return
 		}
 
-		productResList, err := resStream.Recv()
-
-		if err != nil {
-			output <- ServiceResult{Error: err}
-			return
-		}
-
 		var products model.Products
 
-		for _, res := range productResList.ProductList {
+		for {
+			res, err := resStream.Recv()
+
+			if err == io.EOF {
+				break
+			}
+
+			if err != nil {
+				output <- ServiceResult{Error: err}
+				return
+			}
+
 			//stock from int32 to decimal
 			stock, err := decimal.NewFromString(strconv.Itoa(int(res.Stock)))
 

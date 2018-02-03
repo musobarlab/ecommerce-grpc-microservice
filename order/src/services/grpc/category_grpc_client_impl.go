@@ -1,6 +1,8 @@
 package grpc
 
 import (
+	"io"
+
 	"golang.org/x/net/context"
 
 	pb "github.com/wuriyanto48/ecommerce-grpc-microservice/order/protogo/category"
@@ -78,16 +80,19 @@ func (c *categoryGrpcClientImpl) FindAll() <-chan ServiceResult {
 			return
 		}
 
-		categoryResList, err := resStream.Recv()
-
-		if err != nil {
-			output <- ServiceResult{Error: err}
-			return
-		}
-
 		var categories model.Categories
 
-		for _, res := range categoryResList.CategoryList {
+		for {
+			res, err := resStream.Recv()
+
+			if err == io.EOF {
+				break
+			}
+
+			if err != nil {
+				output <- ServiceResult{Error: err}
+				return
+			}
 
 			category := model.Category{
 				ID:          int(res.ID),
