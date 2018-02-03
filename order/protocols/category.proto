@@ -19,5 +19,5 @@ message CategoryListReponse{
 
 service CategoryService {
   rpc FindByID (CategoryQueryRequest) returns (CategoryResponse);
-  rpc FindAll (CategoryQueryRequest) returns (stream CategoryListReponse);
+  rpc FindAll (CategoryQueryRequest) returns (stream CategoryResponse);
 }
