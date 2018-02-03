@@ -2,6 +2,11 @@
 
 Demo(Building E-Commerce Microservice using Golang, Rest and GRPC)
 
+##
+
+![alt text](./docs/images/arch.png)
+
+##
 ### TODO
   - [ ] Create Backend for Product, Order, & Payment
   - [ ] Integrate all backend using GRPC
