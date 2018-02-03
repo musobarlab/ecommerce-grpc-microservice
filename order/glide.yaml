@@ -12,3 +12,6 @@ import:
   version: v1.2.1
   subpackages:
   - assert
+- package: golang.org/x/net
+  subpackages:
+  - context
