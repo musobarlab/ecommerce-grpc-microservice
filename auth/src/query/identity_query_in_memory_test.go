@@ -17,7 +17,7 @@ func TestIdentityQueryInMemory(t *testing.T) {
 	exampleIdentity.Password = "123456"
 	exampleIdentity.PasswordSalt = "salt"
 
-	db["M1"] = &exampleIdentity
+	db["wuriyanto48@yahoo.co.id"] = &exampleIdentity
 
 	q := NewIdentityQueryInMemory(db)
 

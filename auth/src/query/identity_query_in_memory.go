@@ -20,15 +20,10 @@ func NewIdentityQueryInMemory(db map[string]*model.Identity) IdentityQuery {
 func (q *identityQueryInMemory) FindByEmail(email string) <-chan QueryResult {
 	output := make(chan QueryResult)
 	go func() {
-		var identity *model.Identity
-		for _, v := range q.db {
-			if v.Email == email {
-				identity = v
-				break
-			} else {
-				output <- QueryResult{Error: errors.New("IDENTITY_NOT_FOUND")}
-				return
-			}
+		identity, ok := q.db[email]
+		if !ok {
+			output <- QueryResult{Error: errors.New("member not found")}
+			return
 		}
 
 		output <- QueryResult{Result: identity}

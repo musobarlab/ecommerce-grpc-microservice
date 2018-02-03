@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/config"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/db"
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/middleware"
-	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/model"
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/presenter"
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/query"
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/auth/src/token"
@@ -24,15 +24,8 @@ func main() {
 	}
 
 	// init auth handler
-	db := make(map[string]*model.Identity)
-	var i model.Identity
-	i.ID = "M1"
-	i.Email = "wuriyanto48@yahoo.co.id"
-	i.Password = "12345"
 
-	db["M1"] = &i
-
-	identityQuery := query.NewIdentityQueryInMemory(db)
+	identityQuery := query.NewIdentityQueryInMemory(db.GetInMemoryDb())
 	accessTokenGenerator := token.NewJwtGenerator(privateKey, time.Minute*10)
 
 	authUseCase := usecase.NewAuthUseCase(identityQuery, accessTokenGenerator)
