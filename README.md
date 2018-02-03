@@ -4,7 +4,7 @@ Demo(Building E-Commerce Microservice using Golang, Rest and GRPC)
 
 ##
 
-![alt text](./docs/images/arch.png)
+![alt text](./docs/images/arc.png)
 
 ##
 ### TODO
