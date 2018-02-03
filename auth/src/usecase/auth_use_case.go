@@ -27,6 +27,8 @@ func (a *authUseCaseImpl) GetAccessToken(email, password string) <-chan UseCaseR
 	output := make(chan UseCaseResult)
 
 	go func() {
+		defer close(output)
+
 		identityResult := <-a.identityQuery.FindByEmail(email)
 
 		if identityResult.Error != nil {
