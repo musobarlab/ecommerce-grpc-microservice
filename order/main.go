@@ -9,7 +9,7 @@ import (
 	configEnv "github.com/joho/godotenv"
 
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/order/config"
-	"gitlab.com/Wuriyanto/big-dream-be/middleware"
+	"github.com/wuriyanto48/ecommerce-grpc-microservice/order/middleware"
 
 	"github.com/wuriyanto48/ecommerce-grpc-microservice/order/src/presenter"
 	grpcService "github.com/wuriyanto48/ecommerce-grpc-microservice/order/src/services/grpc"
