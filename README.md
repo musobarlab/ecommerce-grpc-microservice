@@ -1,5 +1,7 @@
 # Mini E-Commerce Build with Go, GRPC, and Microservices Architecture with Multiple Docker Container
 
+https://forthebadge.com/images/badges/makes-people-smile.svg https://forthebadge.com/images/badges/fuck-it-ship-it.svg
+
 Demo(Building E-Commerce Microservice using Golang, Rest and GRPC)
 
 ##
